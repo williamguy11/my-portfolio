@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Exploratory Data Analysis",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An analysis of data types for exploration and insights."
+    },
+    {
+        "title": "Movie Analysis",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A detailed statistical analysis of various movie genres and their popularity."
+    },
+    {
+        "title": "US Accidents Analysis",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A comprehensive look at accident data in the United States to identify patterns and trends."
+    },
+    {
+        "title": "Sales Forecasting Model",
+        "year": "2022",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A predictive model for forecasting sales using historical data and machine learning techniques."
+    },
+    {
+        "title": "Weather Data Visualization",
+        "year": "2022",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An interactive visualization tool for exploring historical weather data by region."
+    },
+    {
+        "title": "Customer Segmentation",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A project focusing on clustering techniques to identify customer segments based on purchasing behavior."
+    },
+    {
+        "title": "COVID-19 Data Dashboard",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An interactive dashboard to track COVID-19 cases and trends across different regions."
+    },
+    {
+        "title": "Financial Data Analysis",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A project analyzing financial datasets to identify investment opportunities and trends."
+    },
+    {
+        "title": "Real Estate Market Analysis",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An analysis of real estate prices over time and factors influencing property values."
+    },
+    {
+        "title": "Sentiment Analysis on Social Media",
+        "year": "2019",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Using natural language processing to gauge public sentiment on social media posts."
+    },
+    {
+        "title": "Retail Store Optimization",
+        "year": "2019",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A project aimed at optimizing retail store layouts for improved customer experience and sales."
+    },
+    {
+        "title": "Traffic Flow Prediction",
+        "year": "2018",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A predictive model for estimating traffic flow and congestion patterns."
+    }
+]

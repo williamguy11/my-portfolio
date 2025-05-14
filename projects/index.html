@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .projects article {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .projects h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .projects img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal a {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>William Guy</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="index.html" class="current">Projects</a>
+        <a href="../contact/index.html">Contact</a>
+        <a href="../resume/index.html">Resume</a>
+        <a href="https://github.com/williamguy11" target="_blank">GitHub</a>
+    </nav>
+
+    <h1>Projects</h1>
+    <section class="projects" id="projects"></section>
+    <div class="error-message" id="error-message" style="display: none;">Failed to load projects. Please try again later.</div>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            {
+                title: "Interactive Visualization",
+                year: 2024,
+                image: "https://opengraph.githubassets.com/1/williamguy11/Interactive_Visualization",
+                description: "An interactive D3.js-based visualization project hosted on Observable, visualizing suicide rate trends with rich user interactions.",
+                link: "https://github.com/williamguy11/Interactive_Visualization"
+            },
+            {
+                title: "Final Project 209",
+                year: 2024,
+                image: "https://opengraph.githubassets.com/1/williamguy11/Final_Project_209",
+                description: "A comprehensive case study on ethical data science focused on environmental impact assessments, using statistical modeling and policy framing.",
+                link: "https://github.com/williamguy11/Final_Project_209"
+            },
+            {
+                title: "Yellow Taxi Analysis",
+                year: 2024,
+                image: "https://opengraph.githubassets.com/1/jmayank23/YellowTaxiAnalysis",
+                description: "A collaborative PySpark project analyzing NYC Yellow Taxi data for demand forecasting and anomaly detection using machine learning.",
+                link: "https://github.com/jmayank23/YellowTaxiAnalysis"
+            },
+            {
+                title: "Capstone Project",
+                year: 2024,
+                image: "https://opengraph.githubassets.com/1/PraveenManimaranUCSD/CapstoneProject",
+                description: "A predictive modeling capstone analyzing motor vehicle accident severity using weather, location, and time-based features.",
+                link: "https://github.com/PraveenManimaranUCSD/CapstoneProject"
+            }
+        ];
+
+        const projectsContainer = document.getElementById('projects');
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalLink = document.getElementById('modal-link');
+
+        function openModal(project) {
+            modalTitle.textContent = `${project.title} (${project.year})`;
+            modalDescription.textContent = project.description;
+            modalLink.href = project.link;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal if clicking outside of modal-content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Render projects
+        projects.forEach(project => {
+            const article = document.createElement('article');
+            article.onclick = () => openModal(project);
+
+            const title = document.createElement('h2');
+            title.textContent = `${project.title} (${project.year})`;
+
+            const img = document.createElement('img');
+            img.src = project.image;
+            img.alt = `Image of ${project.title}`;
+
+            article.appendChild(title);
+            article.appendChild(img);
+            projectsContainer.appendChild(article);
+        });
+    </script>
+</body>
+</html>

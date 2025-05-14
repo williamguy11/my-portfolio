@@ -1,0 +1,78 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  max-width: 100ch; /* Adjusted width */
+  margin-inline: auto;
+  padding: 4rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  font-size: 1.5rem; /* Slightly reduced font size */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-bottom: 2px solid rgba(80%, 3%, 200%, 0.3);
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+nav a.current {
+  border-bottom: 0.6em solid var(--color-accent);
+  padding-bottom: 0.3em;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align the image and text to the center */
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 50%; /* Smaller image size */
+  height: auto;
+}
+
+p {
+  font-size: 1.5rem; /* Adjust the font size to make it more balanced */
+  margin: 1rem auto;
+  max-width: 60ch; /* Limit the width of the paragraph */
+}
+
+/* Adjust other elements to adapt to dark mode if necessary */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit; /* Ensure the dropdown inherits the site's font */
+}
+
+select {
+  font-family: inherit; /* Inherit the font style from the label */
+}
+
+
