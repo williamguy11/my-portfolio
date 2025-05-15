@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Resume</title>
+
+  <link rel="stylesheet" href="/my-webpage/style.css" />
+
+  <style>
+    :root {
+      --color-accent: #007acc;
+    }
+
+    body {
+      max-width: 100ch;
+      margin-inline: auto;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5em;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    nav a:hover {
+      border-bottom: 0.2em solid var(--color-accent);
+      background-color: #e0f0ff;
+    }
+
+    nav a.current {
+      border-bottom: 0.4em solid var(--color-accent);
+      padding-bottom: 0.1em;
+    }
+
+    .color-scheme {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 80%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.7rem 1.2rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .download-button:hover {
+      background-color: #005a99;
+    }
+  </style>
+</head>
+<body>
+  <h1>William Guy</h1>
+
+  <nav>
+    <a href="/my-webpage/">Home</a>
+    <a href="/my-webpage/projects/">Projects</a>
+    <a href="/my-webpage/contact/">Contact</a>
+    <a href="/my-webpage/resume/" class="current">Resume</a>
+    <a href="https://github.com/williamguy11" target="_blank">GitHub</a>
+  </nav>
+
+
+  <h2>Download or View My Resume</h2>
+  <a class="download-button" href="/my-webpage/resume/WilliamAGuyResume-Copy.pdf" download>Download Resume (PDF)</a>
+
+  <iframe src="/my-webpage/resume/WilliamAGuyResume-Copy.pdf"></iframe>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const themeSwitcher = document.getElementById("theme-switcher");
+      const savedTheme = localStorage.getItem("colorScheme") || "auto";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      themeSwitcher.value = savedTheme;
+
+      themeSwitcher.addEventListener("change", function () {
+        const selectedTheme = themeSwitcher.value;
+        document.documentElement.setAttribute("data-theme", selectedTheme);
+        localStorage.setItem("colorScheme", selectedTheme);
+      });
+    });
+  </script>
+</body>
+</html>
